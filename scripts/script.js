@@ -12,7 +12,50 @@ clickMeButton.addEventListener("click", clickHandler,{once:true});
 function changeBGPink()
 {
     // document.body.style.backgroundColor = "pink";
-    
+
     document.body.classList.add("pink-bg");
 }
 clickMeButton.addEventListener("click", changeBGPink);
+
+function changeText()
+{
+    if( clickMeButton.textContent === 'Click Me!')
+    {
+        clickMeButton.textContent = "clicked";
+    }
+    else if ( clickMeButton.textContent === "clicked")
+    {
+        clickMeButton.textContent = "Click Me!";
+    }
+}
+clickMeButton.addEventListener("click", changeText);
+
+function updateImage(event)
+{
+    console.log(event.target.textContent)
+    const image = document.querySelector("#shoppingCart");
+    // console.log(image);
+    image.src = "images/263142.png";
+    image.width=100;
+    image.height=100;
+    image.alt = "shopping cart icon";
+}
+clickMeButton.addEventListener("click", updateImage);
+
+const buttonContainer = document.querySelector(".button-container");
+
+function changeBGGreen(e)
+{
+    if (e.target.tagName === "BUTTON") {
+        e.target.style.backgroundColor = "green";
+        // e.target.classList.add("greenBG");
+    }
+}
+buttonContainer.addEventListener("mouseover", changeBGGreen);
+
+function changeTextColor(e)
+{
+    e.target.textContent --> gives me the textContent
+    e.target.style.color --> style
+}
+buttonContainer.addEventListener("click", changeTextColor);
