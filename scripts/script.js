@@ -7,5 +7,5 @@ function clickHandler ()
     clickMeButton.addEventListener("click", clickHandler)
 }
 
-clickMeButton.addEventListener("click", clickHandler);
+clickMeButton.addEventListener("click", clickHandler,{once:true});
 
